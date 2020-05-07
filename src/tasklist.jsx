@@ -1,41 +1,15 @@
 import React, {Component} from 'react';
-import TaskDetailView from './task_detail_view'
 import Task from './task'
 
 class TaskList extends Component {
-    state = {
-        list: [
-            {
-                id: 1,
-                headline: '卵',
-                desc: 'スーパーで卵を買ってくる'
-            },
-            {
-                id: 2,
-                headline: 'チーズ',
-                desc: 'チーズの詰め合わせを買う'
-            },
-            {
-                id: 3,
-                headline: 'ワイン',
-                desc: '赤ワインの用意 予算800円'
-            },
-        ],
-        showing_detail_id: null,
-    }
-
-    handleShowDetail = task => {
-        console.log( task + ' called')
-    }
-
     render() {
+        console.log(this.props);
         return (
             <div>
-                { this.state.list.map(task => (
+                { this.props.list.map(task => (
                     <Task key={task.id}
-                          headline={task.headline}
-                          desc={task.desc}
-                          onShowDetail={ this.handleShowDetail }
+                          task={task}
+                          onClickTask={ this.props.onClickTask }
                     />
                     )
                 ) }
@@ -43,5 +17,5 @@ class TaskList extends Component {
         )
     }
 }
-
+//ReactDOM.render( <TaskList />, document.getElementById('list'))
 export default TaskList

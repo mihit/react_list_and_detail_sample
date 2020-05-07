@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import TaskList from './tasklist';
-import TaskDetailView from './task_detail_view';
+import TaskManager from './task_manager'
 
-ReactDOM.render( <TaskList />, document.getElementById('root'))
-ReactDOM.render( <TaskDetailView />, document.getElementById('detail'))
+ReactDOM.render( <TaskManager />, document.getElementById('root'))
